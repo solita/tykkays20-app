@@ -1,6 +1,8 @@
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 import os
  
+port = 8000
+
 class Tykkays20HTTPRequestHandler(BaseHTTPRequestHandler):
   
   #handle GET command
@@ -22,9 +24,9 @@ def run():
  
   #ip and port of servr
   #by default http server port is 80
-  server_address = ('127.0.0.1', 8000)
+  server_address = ('127.0.0.1', port)
   httpd = HTTPServer(server_address, Tykkays20HTTPRequestHandler)
-  print('http server is running...')
+  print('http server is running in port ' + str(port) + '...')
   httpd.serve_forever()
   
 if __name__ == '__main__':
